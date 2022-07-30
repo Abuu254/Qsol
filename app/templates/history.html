@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+ History
+{% endblock %}
+
+{% block app_content%}
+<table>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="mytext", colspan="5">
+                    <h2>Ticket History</h2>
+                </th>
+            </tr>
+        </thead>
+        <thead>
+          <tr>
+              <th scope="col">Department</th>
+              <th scope="col">Ticket Number</th>
+              <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for booking in bookings%}
+          <tr>
+              <td> {{booking.department}}</td>
+              <td> {{booking.id}}</td>
+              <td> {{moment(booking.timestamp).format('LLL')}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+    </table>
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer Tickets</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}" style="float: right;">Older Tickets</a>
+    {% endif %}
+</table>
+{%endblock%}

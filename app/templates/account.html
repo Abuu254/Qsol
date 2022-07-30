@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+ Account
+{% endblock %}
+
+{% block app_content%}
+<div class="container", id="box">
+    <table class="table table-hover">
+        <tr>
+            <td style="background-color:silver;"><img src="{{ user.profile_picture(64) }}"> User: {{ user.username }}</td>
+        </tr>
+        <tr>
+            <td style="background-color:blanchedalmond"><b>Email</b>: {{user.email}}</td>
+        </tr>
+        <tr>
+            <td style="background-color:blanchedalmond"><b>Username</b>: {{user.username}}</td>
+        </tr>
+        <tr>
+            <td style="background-color:wheat;"><a href="{{url_for('change_password')}}">Change Password</a></td>
+        </tr>
+        <tr>
+            <td style="background-color:rgb(233, 218, 187);"><a href="{{url_for('change_username')}}">Change Username</a></td>
+        </tr>
+    </table>
+</div>
+{%endblock%}

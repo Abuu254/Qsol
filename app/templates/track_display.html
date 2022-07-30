@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+ Track
+{% endblock %}
+
+{% block app_content%}
+{% if client_ticket %}
+    <table class="table table-hover">
+        <thead>
+            <tr >
+                <th class="mytext", colspan="5">
+                    <h2>{{name}}</h2>
+                </th>
+            </tr>
+        </thead>
+        <thead>
+          <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">Username</th>
+              <th scope="col">Ticket Number</th>
+              <th scope="col">My Position</th>
+              <th scope="col">Total Number of People in Queue</th>
+              <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td> {{client_ticket.user_id}} </td>
+              <td> {{client_ticket.username}}</td>
+              <td> {{client_ticket.id}}</td>
+              <td> {{position}}</td>
+              <td> {{size}}</td>
+              <td> <form action="{{url_for('track')}}" method="post">
+                <input type="hidden" value="{{name}}" name="name">
+                <input type="submit" value="Delete Ticket">
+            </form></td>
+          </tr>
+        </tbody>
+    </table>
+    {%else%}
+    <p>No Ticket.</p><br>
+    <a href="{{url_for('select_department')}}">Back</a>
+    {%endif%}
+{% endblock %}

@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+ Home
+{% endblock %}
+
+{% block app_content%}
+    <div>
+        {% for list in mylist %}
+        {%for ticket in client_ticket%}
+        {%if ticket in list%}
+        {%if list.index(ticket) ==0%}
+        <h4 class="serve">You Are Being Served in the {{ticket.department}} department! Thanks for Your Patience.</h4>
+        {%endif%}
+        {%endif%}
+        {%endfor%}
+        {%endfor%}
+    </div>
+    <div>
+        <table>
+            <table class="table table-hover">
+                <thead>
+                    <tr >
+                        <th scope="col" class="mytext", colspan="5">
+                            <h2>{{message}}</h2>
+                        </th>
+                    </tr>
+                </thead>
+                <thead>
+                  <tr>
+                      <th scope="col">Department</th>
+                      <th scope="col">Ticket Number</th>
+                      <th scope="col">People in Queue</th>
+                      <th scope="col">My Position in Queue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for list in mylist %}
+                  {%for ticket in client_ticket%}
+                  {%if ticket in list%}
+                  <tr>
+                      <td> {{ticket.department}}</td>
+                      <td> {{ticket.id}}</td>
+                      <td> {{list|length}}</td>
+                      {%if list.index(ticket) !=0%}
+                      <td> {{list.index(ticket)+1}}</td>
+                      {%else%}
+                      <td>Being Served</td>
+                      {%endif%}
+                  </tr>
+                  {%endif%}
+                  {%endfor%}
+                  {%endfor%}
+                </tbody>
+            </table>
+        </table>
+    </div>
+    <br><br>
+    <div class="center">
+        <a class="btn btn-primary btn-lg" href="{{url_for('hospital')}}">BOOK A TICKET</a>
+    </div>
+    </br></br>
+    <div id='map'></div>
+    </br>
+    <script src="static/myscript.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoAdJ8AApaYaklyMhNWfFJ1HuYnkfga_s&callback=yaleHealth">
+</script>
+{% endblock %}

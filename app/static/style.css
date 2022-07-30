@@ -1,0 +1,106 @@
+
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  table{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  #background {
+    background-image: url('images/display_background.jpg');
+    background-attachment: fixed;
+    background-repeat: inherit;
+    background-size: 100%;
+  }
+  body {
+    font-family: Open Sans serif;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-size:large;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+footer {
+  background-color: #909497;
+  color: black;
+  padding: 0.5em;
+  margin-top: auto;
+  text-align: center;
+  font-size: small;
+  position: relative;
+}
+.mysize{
+  height: 40%;
+  width: 40%;
+}
+.content{
+  padding: 3rem;
+}
+
+.mytext{
+  text-align: center;
+}
+
+#box{
+  width: 50%;
+  height: 50%;
+  border-width: 2px;
+  position: center;
+}
+
+#mylinks{
+  font-size: large;
+  font-weight: 400;
+  font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#welcome{
+  text-align: center;
+  flex: auto;
+}
+
+.center {
+  margin: auto;
+  width: 20%;
+  }
+.serve{
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+  }
+  #icon{
+    font-weight: bolder;
+     font-size: 40px;
+  }
+
+  .block{
+    float:right;
+    margin-left: auto;
+    margin-left: auto;
+    width: 50%;
+    font-size: x-large;
+    font-style: oblique;
+    background-color: white;
+    white-space:normal;
+    text-align: center;
+  }
+  .image{
+    width: 2%;
+    height: 2%;
+  }

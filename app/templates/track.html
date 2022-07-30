@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+ choose section
+{% endblock %}
+
+{% block app_content%}
+<ul>{%for name in ['Inquiry', 'Admissions', 'Consultation', 'Laboratory', 'Pharmacy'] %}
+    <br>
+    <li><a class="btn btn-primary" href="{{url_for('tracking', name=name)}}">{{name}}</a>
+       </li><br>
+    {%endfor%}
+</ul>
+{% endblock %}

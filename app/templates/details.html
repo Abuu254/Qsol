@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+ Details
+{% endblock %}
+
+{% block app_content%}
+            <h3>Ticket Details</h3>
+    <ul>
+        <li>Your Ticket Number is:{{ticket}}</li>
+        <li>Department: {{department}}</li>
+        <li>Total number of people in Line: {{size}}</li>
+        <li>People Ahead of You: {{people_ahead}}</li>
+    </ul>
+
+{% endblock %}

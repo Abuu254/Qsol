@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+ Hospital
+{% endblock %}
+
+{% block app_content %}
+<div>
+<h1>Queue Regestration</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+</div>
+<div>
+<div class='block'>
+    <h1>QSol Regestration Explained</h1>
+    <br>
+    <p>  Before you use join a queue in Qsol, you first have to choose a hospital,
+        and a department in that particular hospital.</p>
+        <p>After you confirm your booking,
+        that is when you are added to the queue in that particular department.
+        You can then track you active bookings, and see your booking history. </p>
+</div>
+</div>
+{% endblock %}
+

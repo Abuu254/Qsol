@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+ success
+{% endblock %}
+
+{% block app_content%}
+    <h1>{{head}}</h1>
+    <h2>Ticket Details</h2>
+    <ul>
+        <li>Your Ticket Number is:{{ticket}}</li>
+        <li>Institution: {{institution}}</li>
+        <li>Department: {{department}}</li>
+        <li>Total number of people in Line: {{size}}</li>
+        <li>People Ahead of You: {{people_ahead}}</li>
+    </ul>
+
+    <a class="btn btn-primary btn-lg" href="{{url_for('select_department')}}">TRACK TICKETS</a>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "staff/staff_base.html" %}
+
+{% block title%}
+ History
+{% endblock%}
+
+{% block app_content%}
+<table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col", class="mytext", colspan="5">
+          <h2>{{client_ticket[0].department}}</h2>
+        </th>
+      </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Ticket Number</th>
+            <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ticket in client_ticket %}
+        <tr>
+            <td> {{ticket.user_id}} </td>
+            <td> {{ticket.username}}</td>
+            <td> {{ticket.id}}</td>
+            <td> {{moment(ticket.timestamp).format('LLL')}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+  </table>
+</table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "staff/staff_base.html" %}
+
+{% block title %}
+ Display
+{% endblock %}
+
+{% block app_content%}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.inquiry}}<br>
+    </p>
+    <p>
+        {{ form.admissions}}<br>
+    </p>
+    <p>
+        {{ form.consultation}}<br>
+    </p>
+    <p>
+        {{ form.laboratory}}<br>
+    </p>
+    <p>
+        {{ form.pharmacy}}<br>
+    </p>
+</form>
+
+
+{% endblock %}
